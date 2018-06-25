@@ -20,6 +20,6 @@ public interface ApiService {
      * 获取彩票种类
      * @return
      */
-    @GET("book/search")
+    @GET("types")
     Observable<BaseResponse<List<LotteryEntity>>> getLotteries();
 }
