@@ -7,6 +7,7 @@ import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * @author Cicada
@@ -21,5 +22,5 @@ public interface ApiService {
      * @return
      */
     @GET("types")
-    Observable<BaseResponse<List<LotteryEntity>>> getLotteries();
+    Observable<BaseResponse<List<LotteryEntity>>> getLotteries(@Query("key") String key);
 }

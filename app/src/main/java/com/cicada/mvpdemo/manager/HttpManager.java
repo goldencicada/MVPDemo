@@ -57,7 +57,7 @@ public class HttpManager {
      * @param observer
      */
     public void getLotteries(Observer<BaseResponse<List<LotteryEntity>>> observer){
-        apiService.getLotteries()
+        apiService.getLotteries("977434db9831c2b30ccb714808715733")
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

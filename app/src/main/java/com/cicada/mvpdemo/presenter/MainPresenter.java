@@ -25,7 +25,7 @@ public class MainPresenter<V> extends MainContract.MainPresenter<MainContract.Ma
     }
 
     @Override
-    public void getCities(MainContract.MainView view) {
+    public void getCities(final MainContract.MainView view) {
         HttpManager.getInstance().getLotteries(new Observer<BaseResponse<List<LotteryEntity>>>() {
             @Override
             public void onSubscribe(Disposable d) {
@@ -35,6 +35,7 @@ public class MainPresenter<V> extends MainContract.MainPresenter<MainContract.Ma
             @Override
             public void onNext(BaseResponse<List<LotteryEntity>> listBaseResponse) {
                 Log.e("test", "onNext: " + listBaseResponse.toString() );
+                view.showToast(listBaseResponse.toString());
             }
 
             @Override

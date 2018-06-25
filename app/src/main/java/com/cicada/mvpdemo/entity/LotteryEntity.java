@@ -50,5 +50,15 @@ public class LotteryEntity {
     public void setRemarks(String remarks) {
         this.remarks = remarks;
     }
+
+    @Override
+    public String toString() {
+        return "LotteryEntity{" +
+                "lottery_id='" + lottery_id + '\'' +
+                ", lottery_name='" + lottery_name + '\'' +
+                ", lottery_type_id='" + lottery_type_id + '\'' +
+                ", remarks='" + remarks + '\'' +
+                '}';
+    }
 }
 

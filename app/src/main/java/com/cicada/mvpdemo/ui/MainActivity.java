@@ -1,6 +1,7 @@
 package com.cicada.mvpdemo.ui;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cicada.mvpdemo.R;
@@ -30,7 +31,7 @@ public class MainActivity extends BaseActivity<MainContract.MainView,
 
     @Override
     public void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        ((TextView)findViewById(R.id.lottery)).setText(message);
     }
 
     @Override
