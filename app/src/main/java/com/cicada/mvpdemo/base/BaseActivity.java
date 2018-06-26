@@ -28,7 +28,6 @@ public abstract class BaseActivity<V, P extends BasePresenter<V>> extends AppCom
 
         if (mPresenter != null) {
             mPresenter.attachView((V) this);
-            mPresenter.fetch();
         }
     }
 

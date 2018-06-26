@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_res_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lottery_res"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_res"/>
+
+    <RelativeLayout
+        android:id="@+id/lay_res"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_res_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_no"/>
+
+    <TextView
+        android:id="@+id/tv_res"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_res_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_no"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lottery_no"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_res_title"
+        app:layout_constraintBottom_toTopOf="@id/tv_date"
+        app:layout_constraintEnd_toStartOf="@id/tv_no"/>
+
+    <TextView
+        android:id="@+id/tv_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_res_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_res"
+        app:layout_constraintBottom_toTopOf="@id/tv_date"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lottery_date"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_no"
+        app:layout_constraintBottom_toTopOf="@id/tv_exdate"
+        app:layout_constraintEnd_toStartOf="@id/tv_date"/>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_res_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_no"
+        app:layout_constraintBottom_toTopOf="@id/tv_exdate"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lottery_sale_amount"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_date"
+        app:layout_constraintBottom_toTopOf="@id/tv_lottery_sale_amount"
+        app:layout_constraintEnd_toStartOf="@id/tv_exdate"/>
+
+    <TextView
+        android:id="@+id/tv_exdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_res_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_date"
+        app:layout_constraintBottom_toTopOf="@id/tv_lottery_sale_amount"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lottery_sale_amount"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_exdate"
+        app:layout_constraintBottom_toTopOf="@id/tv_lottery_pool_amount"
+        app:layout_constraintEnd_toStartOf="@id/tv_lottery_sale_amount"/>
+
+    <TextView
+        android:id="@+id/tv_lottery_sale_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_res_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_exdate"
+        app:layout_constraintBottom_toTopOf="@id/tv_lottery_pool_amount"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lottery_pool_amount"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_lottery_sale_amount"
+        app:layout_constraintEnd_toStartOf="@id/tv_lottery_pool_amount"/>
+
+    <TextView
+        android:id="@+id/tv_lottery_pool_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/tv_res_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_lottery_sale_amount"/>
+
+</android.support.constraint.ConstraintLayout>

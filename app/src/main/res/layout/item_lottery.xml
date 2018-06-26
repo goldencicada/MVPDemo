@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:layout_editor_absoluteY="25dp">
+
+    <ImageView
+        android:id="@+id/iv_lottery"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="15dp"
+        android:src="@mipmap/logo_ssq"
+        tools:ignore="ContentDescription"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_lottery"/>
+
+    <TextView
+        android:id="@+id/tv_lottery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="双色球"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_lottery_time"
+        app:layout_constraintStart_toEndOf="@id/iv_lottery"/>
+
+    <TextView
+        android:id="@+id/tv_lottery_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color_999"
+        android:textSize="12sp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_lottery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_lottery"/>
+
+
+</android.support.constraint.ConstraintLayout>

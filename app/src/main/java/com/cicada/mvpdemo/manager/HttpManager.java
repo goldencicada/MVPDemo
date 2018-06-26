@@ -3,6 +3,7 @@ package com.cicada.mvpdemo.manager;
 import com.cicada.mvpdemo.app.App;
 import com.cicada.mvpdemo.base.BaseResponse;
 import com.cicada.mvpdemo.entity.LotteryEntity;
+import com.cicada.mvpdemo.entity.LotteryResultEntity;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class HttpManager {
 
     private volatile static HttpManager instance;
     private static final String BASE_URL = "http://apis.juhe.cn/lottery/";
+    private static final String KEY = "977434db9831c2b30ccb714808715733";//百度聚合key
     private static final int TIME_OUT = 10000;
     private Retrofit retrofit;
     private ApiService apiService;
@@ -57,7 +59,20 @@ public class HttpManager {
      * @param observer
      */
     public void getLotteries(Observer<BaseResponse<List<LotteryEntity>>> observer){
-        apiService.getLotteries("977434db9831c2b30ccb714808715733")
+        apiService.getLotteries(KEY)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(observer);
+    }
+
+    /**
+     * 中奖历史
+     * @param observer
+     */
+    public void getHistory(String lottery_id, String page_size, String page,
+                           Observer<BaseResponse<LotteryResultEntity>> observer){
+        apiService.getHistory(KEY, lottery_id, page_size, page)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

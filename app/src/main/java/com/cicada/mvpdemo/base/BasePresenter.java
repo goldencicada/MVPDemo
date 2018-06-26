@@ -13,11 +13,6 @@ public abstract class BasePresenter<V> {
     protected WeakReference<V> mViewRef;
 
     /**
-     * 获取数据方法
-     */
-    public abstract void fetch();
-
-    /**
      * 绑定的方法
      * 在onCreate()中调用
      *

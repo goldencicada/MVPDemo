@@ -1,7 +1,5 @@
 package com.cicada.mvpdemo.presenter;
 
-import android.util.Log;
-
 import com.cicada.mvpdemo.base.BaseResponse;
 import com.cicada.mvpdemo.contract.MainContract;
 import com.cicada.mvpdemo.entity.LotteryEntity;
@@ -15,37 +13,37 @@ import io.reactivex.disposables.Disposable;
 public class MainPresenter<V> extends MainContract.MainPresenter<MainContract.MainView>{
 
     @Override
-    public void fetch() {
-
-    }
-
-    @Override
     public void onDestroy() {
 
     }
 
     @Override
-    public void getCities(final MainContract.MainView view) {
+    public void getLotteries(final MainContract.MainView view) {
         HttpManager.getInstance().getLotteries(new Observer<BaseResponse<List<LotteryEntity>>>() {
+
+            Disposable d;
+
             @Override
             public void onSubscribe(Disposable d) {
-
+                this.d = d;
             }
 
             @Override
             public void onNext(BaseResponse<List<LotteryEntity>> listBaseResponse) {
-                Log.e("test", "onNext: " + listBaseResponse.toString() );
-                view.showToast(listBaseResponse.toString());
+                List<LotteryEntity> lotteries = listBaseResponse.getResult();
+                view.update(lotteries);
             }
 
             @Override
             public void onError(Throwable e) {
-
+                view.showToast(e.getMessage());
+                d.dispose();
             }
 
             @Override
             public void onComplete() {
-
+                view.success();
+                d.dispose();
             }
         });
     }
