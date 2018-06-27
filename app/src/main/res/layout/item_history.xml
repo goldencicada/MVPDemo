@@ -3,12 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_corner"
+    android:padding="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp">
 
     <TextView
         android:id="@+id/tv_res_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/lottery_res"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_14"
@@ -19,7 +24,7 @@
 
     <RelativeLayout
         android:id="@+id/lay_res"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/tv_res_title"
@@ -29,7 +34,7 @@
 
     <TextView
         android:id="@+id/tv_res"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/tv_res_title"
@@ -38,8 +43,8 @@
         app:layout_constraintBottom_toTopOf="@id/tv_no"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/lottery_no"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_14"
@@ -50,17 +55,17 @@
 
     <TextView
         android:id="@+id/tv_no"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/tv_res_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lay_res"
+        app:layout_constraintTop_toBottomOf="@id/tv_res"
         app:layout_constraintBottom_toTopOf="@id/tv_date"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/lottery_date"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_14"
@@ -71,7 +76,7 @@
 
     <TextView
         android:id="@+id/tv_date"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/tv_res_title"
@@ -80,9 +85,9 @@
         app:layout_constraintBottom_toTopOf="@id/tv_exdate"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lottery_sale_amount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/lottery_exdate"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_14"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +97,7 @@
 
     <TextView
         android:id="@+id/tv_exdate"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/tv_res_title"
@@ -101,8 +106,8 @@
         app:layout_constraintBottom_toTopOf="@id/tv_lottery_sale_amount"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/lottery_sale_amount"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_14"
@@ -113,7 +118,7 @@
 
     <TextView
         android:id="@+id/tv_lottery_sale_amount"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/tv_res_title"
@@ -122,22 +127,24 @@
         app:layout_constraintBottom_toTopOf="@id/tv_lottery_pool_amount"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/lottery_pool_amount"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_lottery_sale_amount"
-        app:layout_constraintEnd_toStartOf="@id/tv_lottery_pool_amount"/>
+        app:layout_constraintEnd_toStartOf="@id/tv_lottery_pool_amount"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
         android:id="@+id/tv_lottery_pool_amount"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/tv_res_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_lottery_sale_amount"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_lottery_sale_amount"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
